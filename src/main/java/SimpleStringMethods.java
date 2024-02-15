@@ -14,7 +14,7 @@ public class SimpleStringMethods {
      * @return the length of string s.
      */
     public int getStringLength(String s){
-        return 0;
+        return  s.length();
     }
 
     /**
@@ -24,8 +24,14 @@ public class SimpleStringMethods {
      * @return the character of String s that is located at position n.
      */
     public char getCharacterAtIndex(String s, int n){
-        return ' ';
+        if (n >= 0 && n < s.length()) {
+            return s.charAt(n);
+        } else {
+            throw new IndexOutOfBoundsException("Index " + n + " out of bounds for string of length " + s.length());
+        }
     }
+
+    
 
     /**
      * indexOf can be used to retrieve the index of the first character of a String, such as the position of character
@@ -36,7 +42,7 @@ public class SimpleStringMethods {
      * @return the index of the first occurence of c within s.
      */
     public int getIndexGivenCharacter(String s, char c){
-        return 0;
+        return s.indexOf(c);
     }
 
 }
